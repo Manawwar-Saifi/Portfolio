@@ -56,9 +56,9 @@ const Header = () => {
                   <li data-aos="fade-down" data-aos-duration="1600">
                     <Link href="#home-experience">Experience</Link>
                   </li>
-                  <li data-aos="fade-down" data-aos-duration="1700">
+                  {/* <li data-aos="fade-down" data-aos-duration="1700">
                     <Link href="#home-skills">Skills</Link>
-                  </li>
+                  </li> */}
                   <li data-aos="fade-down" data-aos-duration="1800">
                     <Link href="#home-journey">Journey</Link>
                   </li>
