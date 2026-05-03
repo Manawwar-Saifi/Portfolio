@@ -1,0 +1,150 @@
+#draggable-element {
+  width: 200%;
+  height: fit-content;
+  position: absolute;
+  margin: 1rem;
+  scale: 0.75;
+  text-align: center;
+  h4 {
+    margin-top: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+    opacity: 0.25;
+  }
+  .row-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
+    column-gap: 1rem;
+    row-gap: 0rem;
+    > div {
+      width: 18%;
+      margin: 2rem 0rem;
+    }
+  }
+}
+
+#drag-container {
+  overflow: hidden;
+  height: 30rem;
+  width: 80%;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  transition: 0.3s;
+  z-index: 5;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  touch-action: pan-y;
+  &::after {
+    content: "Drag & Slide";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: "SUSE Mono";
+    color: white;
+    z-index: 10000;
+    transition: 0.3s;
+    border-radius: 8px;
+  }
+  &:hover {
+    &::after {
+      scale: 0;
+      border-radius: 100%;
+    }
+  }
+}
+
+.main-skill-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0 0 0;
+  img {
+    width: 70%;
+    object-fit: cover;
+  }
+  .col-div {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .border {
+      transform: scaleX(-1);
+    }
+    div {
+      border: 2px solid green;
+    }
+  }
+}
+
+#skills-3d-container {
+  overflow: hidden;
+  height: 30rem;
+  width: 80%;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  transition: 0.3s;
+  z-index: 5;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  cursor: grab;
+  touch-action: pan-y;
+  &:active {
+    cursor: grabbing;
+  }
+  &::after {
+    content: "Drag to Rotate";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: "SUSE Mono";
+    color: white;
+    z-index: 10000;
+    transition: 0.3s;
+    pointer-events: none;
+    border-radius: 8px;
+  }
+  &:hover {
+    &::after {
+      scale: 0;
+      border-radius: 100%;
+    }
+  }
+  canvas {
+    display: block;
+  }
+}
+
+@media (max-width: 720px) {
+  #draggable-element {
+    > div {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
